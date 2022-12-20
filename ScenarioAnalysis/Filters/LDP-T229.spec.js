@@ -1,0 +1,36 @@
+const {test,expect, request}= require('@playwright/test');
+const logindata=JSON.parse(JSON.stringify(require('../../../testdata/Logindata.json'))); //convert json file to string format and then create a object for converted file
+const inputdata=JSON.parse(JSON.stringify(require('../../../testdata/ID_ScenarioAnalysis.json')));
+let webContext2;
+//let webContext3;
+
+test( 'close icon action in location section',async({browser})=>
+{
+     //for acme variable webContext3 and ScenarioAnalysisAcmeLogindata.json
+    webContext2 = await browser.newContext({storageState:'LoginBypassCookies.json'});
+    const page = await webContext2.newPage(); //for acme webcontext3
+    await page.goto(logindata.presaleslink); //for acme link1
+    const frame = page.frameLocator('#mfe');
+    await frame.locator(inputdata.ScenarioAnalysis).click();
+    await page.waitForTimeout(3000);
+    //for acme (inputdata.AcmeAggregationLevelOption_2) in the place of (inputdata.AggregationLevelOption_2)
+    var boolean = await frame.locator(inputdata.AggregationLevelOption_2).isEnabled();
+    expect(boolean).toBeTruthy();
+    await frame.locator(inputdata.AggregationLevelOption_2).click();
+    var bool = await frame.locator(inputdata.LocationSearchBarField).isVisible();
+    expect(bool).toBeTruthy();
+    await frame.locator(inputdata.LocationSearchBarField).click();
+    
+    await frame.locator(inputdata.LocationHierarchySearchField).waitFor();
+    //for acme 'Malaysia' in the place of 'US'
+    await frame.locator(inputdata.LocationHierarchySearchField).type('US',{delay:100});
+    await page.waitForTimeout(3000);
+    var CloseIcon = await frame.locator(inputdata.HierarchyCloseIcon).isEnabled();
+    expect(CloseIcon).toBeTruthy();
+    await frame.locator(inputdata.HierarchyCloseIcon).click();
+    await page.waitForTimeout(3000);
+
+    var bool = await frame.locator("input[value=''] >> nth=1").isVisible();
+    expect(bool).toBeTruthy();
+   
+})
