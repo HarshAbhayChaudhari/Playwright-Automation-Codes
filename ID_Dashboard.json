@@ -1,0 +1,33 @@
+{
+    "username" : "1034625@jdadelivers.com",
+    "KPIImpact" : "text='KPI Impact'",
+    "KPIImpactC" : "text=Cumulative KPI Impact",
+    "LocationHierarchy" : "input[type='text'] >> nth=0",
+    "ProductHierarchy" : "input[type='text'] >> nth=1",
+    "Sales" : "text=Sales (PCS)",
+    "SalesAfterReturns" : "text=Sales after Returns (PCS)",
+    "Revenue" : "text=Revenue ($)",
+    "Profit" : "text=Profit ($)",
+    "Settings" : "button >> nth=2",
+    "Cancel" : "button:has-text('Cancel')",
+    "SaveSettings" : "button:has-text('Save Settings')",
+    "O1" : "text=RevenueSalesProfitSales after Returns >> button >> nth=0",
+    "O2" : "text=RevenueSalesProfitSales after Returns >> button >> nth=1",
+    "O3" : "text=RevenueSalesProfitSales after Returns >> button >> nth=2",
+    "O4" : "text=RevenueSalesProfitSales after Returns >> button >> nth=3",
+    "LocationHierarchy_DD" : "div:nth-child(1) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiSvgIcon-root > path >> nth=0",
+    "ProductHierarchy_DD" : "div:nth-child(2) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiSvgIcon-root > path >> nth=0",
+    "ShowAll" : "text=Show All",
+    "ShowSelectedOnly" : "text=Show Selected Only",
+    "Done" : "button:has-text('Done')",
+    "ClearSelection" : "text=Clear Selection",
+    "SearchTab" : "[placeholder='Type the hierarchy']",
+    "CloseBig" : "[aria-label='Type the hierarchy'] [aria-label='close']",
+    "CloseSmall" : "[aria-label='close'] >> nth=0",
+    "DefaultStartDate" : "button:has-text('February')",
+    "DefaultEndDate" : "button:has-text('August')"
+
+    
+    
+
+}
